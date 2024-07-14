@@ -2,7 +2,7 @@ package org.example.sorting;
 
 import java.util.Random;
 
-public class BubbleSort {
+public class SelectionSort {
     public static void main(String[] args) {
         Random random = new Random();
         int[] numbers = new int[100000];
@@ -15,17 +15,17 @@ public class BubbleSort {
         printArray(numbers);
 
         long beforeTimeInMillis = System.currentTimeMillis();
-        bubbleSort(numbers);
+        selectionSort(numbers);
         long afterTimeInMillis = System.currentTimeMillis();
 
-        System.out.println("Time taken by bubble sort algorithm: " + (afterTimeInMillis - beforeTimeInMillis));
+        System.out.println("Time taken by selection sort algorithm: " + (afterTimeInMillis - beforeTimeInMillis));
 
         System.out.println("After: ");
         printArray(numbers);
 
     }
 
-    public static void bubbleSort(int[] arr) {
+    public static void selectionSort(int[] arr) {
         for (int i = 0; i <= arr.length - 2; i++) {
             for (int j = i; j <= arr.length - 1; j++) {
                 if (arr[j] < arr[i]) {
