@@ -5,10 +5,10 @@ import java.util.Random;
 public class SelectionSort {
     public static void main(String[] args) {
         Random random = new Random();
-        int[] numbers = new int[100000];
+        int[] numbers = new int[100];
 
         for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = random.nextInt(1000000);
+            numbers[i] = random.nextInt(100);
         }
 
         System.out.println("Before: ");
@@ -27,13 +27,15 @@ public class SelectionSort {
 
     public static void selectionSort(int[] arr) {
         for (int i = 0; i <= arr.length - 2; i++) {
+            int minIndex = i;
             for (int j = i; j <= arr.length - 1; j++) {
-                if (arr[j] < arr[i]) {
-                    int temp = arr[j];
-                    arr[j] = arr[i];
-                    arr[i] = temp;
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
                 }
             }
+            int temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
         }
     }
 
